@@ -23,7 +23,7 @@ header{
 }
 
 
-/* * * * * * NAVBAR * * * * * */
+/*--------------------------- NAVBAR ---------------------------*/
 
 nav > a{
     color: #c636ce;
@@ -105,7 +105,7 @@ nav ul li a.active {
     outline: none;
 }
 
-/* * * * * * HEDER CONTENT * * * * * */
+/*--------------------------- HEDER CONTENT ---------------------------*/
 
 #header-content{
     margin-top: 10%;
@@ -176,7 +176,7 @@ main{
     padding: 0 10%;
 }
 
-/* * * * * * ABOUT * * * * * */
+/*--------------------------- ABOUT ---------------------------*/
 
 .row2 h2 {
     letter-spacing: 2px;
@@ -201,6 +201,12 @@ main{
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+.row1 img:hover{
+    filter: grayscale(0);
+    transform: scale(1.05);
 }
 
 .row{
@@ -215,7 +221,7 @@ main{
     flex-basis: 60%;
 }
 
-/* * * * * * EXPERIENCE * * * * * */
+/*--------------------------- EXPERIENCE ---------------------------*/
 
 #experience {
     text-align: center;
@@ -303,7 +309,7 @@ main{
     text-align: center;
 }
 
-/* * * * * * SKILLS * * * * * */
+/*--------------------------- SKILLS ---------------------------*/
 
 #skills {
     text-align: center;
@@ -368,7 +374,8 @@ animation: 25s slide infinite linear;
     border-radius: 25px;
 }
 
-/* * * * * * EDUCATION * * * * * */
+
+/*--------------------------- EDUCATION ---------------------------*/
 
 #education {
     text-align: center;
@@ -454,7 +461,7 @@ animation: 25s slide infinite linear;
     padding-right: 20px;
 }
 
-/* * * * * * CONTACT * * * * * */
+/*--------------------------- CONTACT ---------------------------*/
 
 #contact{
     text-align: center;
@@ -661,6 +668,12 @@ footer{
     #experience .row {
         flex-direction: column-reverse;
     }
+    .row .row1 img{
+        filter: grayscale(0);
+    }
+    .row .row1 img:hover{
+        transform: scale(1);
+    }
     #experience .row2 .job:nth-child(even) {
         justify-content: right;
         flex-direction: row-reverse;
@@ -829,6 +842,12 @@ footer{
         width: 70%;
         align-self: center;
         justify-self: center;
+    }
+    .row .row1 img{
+        filter: grayscale(0);
+    }
+    .row .row1 img:hover{
+        transform: scale(1);
     }
     .icons-slide img {
         height: 80px;
