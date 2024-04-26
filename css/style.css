@@ -620,13 +620,14 @@ footer{
         align-items: flex-end;
         position: fixed;
         top: 0;
-        right: -220px;
+        right: -240px;
         background-color: #080808;
         width: 200px;
         height: 120vh;
         padding-top: 50px;
         z-index: 2;
         transition: 0.5s ease;
+        text-transform: uppercase;
     }
 
     #about .row {
@@ -785,7 +786,7 @@ footer{
         right: 10px;
     }
     nav ul li{
-        margin: 10px;
+        margin: 20px 10px;
     }
     #burger-menu {
         display: block;
@@ -801,13 +802,14 @@ footer{
         align-items: flex-end;
         position: fixed;
         top: 0;
-        right: -220px;
+        right: -240px;
         background-color: #080808;
         width: 220px;
         height: 120vh;
         padding-top: 50px;
         z-index: 2;
         transition: 0.5s ease;
+        text-transform: uppercase;
     }
     #header-left h1 {
         font-size: 1.2em;
