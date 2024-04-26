@@ -566,6 +566,9 @@ footer{
 
 /* For devices up to 768px (e.g., smartphones) */
 @media screen and (max-width: 768px) {
+    header, main{
+        padding: 0 5%;
+    }
     #header-content img{
         max-width: 55%;
         width: 50%;
@@ -576,8 +579,8 @@ footer{
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        padding-top: 40px;
-        gap: 0;
+        padding-top: 50px;
+        gap: 50px;
     }
     #header-left{
         width: 100%;
@@ -599,7 +602,7 @@ footer{
         right: 10px;
     }
     nav ul li{
-        margin: 10px;
+        margin: 30px;
     }
     #burger-menu {
         display: block;
@@ -721,6 +724,7 @@ footer{
     }
     #nav.fixed {
         background-color: rgba(8, 8, 8, 1);
+        width: 90%;
     }
 }
 
