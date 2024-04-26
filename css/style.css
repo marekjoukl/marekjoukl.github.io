@@ -285,23 +285,22 @@ main{
     flex-direction: column;
     flex-basis: 60%;
 }
-
 .job p:first-child{
     align-self: center;
     color: rgb(22 242 179);
     font-size: 1.1em;
 }
 .job h4{
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 600;
     text-transform: uppercase;
     margin: 10px 0;
-    align-self: flex-start;
 }
 .job p:last-child{
     color: #fff;
     font-size: 1.5em;
     font-weight: 600;
+    text-align: center;
 }
 
 /* * * * * * SKILLS * * * * * */
@@ -356,7 +355,7 @@ animation: 25s slide infinite linear;
 }
 
 .icons-slide img {
-    height: 120px;
+    height: 110px;
     margin: 0 40px;
     transition: transform 0.7s ease;
     border: 3px solid #6a0dad;
@@ -646,15 +645,31 @@ footer{
         align-self: center;
         justify-self: center;
     }
-
+    .row {
+        gap: 60px;
+    }
+    #experience .job-content{
+        align-items: center;
+    }
+    #experience .job i{
+        font-size: 30px;
+    }
     #experience .row {
         flex-direction: column-reverse;
+    }
+    #experience .row2 .job:nth-child(even) {
+        justify-content: right;
+        flex-direction: row-reverse;
+    }
+    #experience .row2 .job:nth-child(odd) {
+        justify-content: left;
     }
     #experience .row2 {
         margin-bottom: -80px;
     }
     #experience .job-content p, #experience .job-content h4{
-        font-size: 2.2vw;;
+        font-size: 2.9vw;
+        align-self: center;
     } 
     #experience .row1 h3{
         font-size: 1.8em;
@@ -676,6 +691,20 @@ footer{
         height: 100%;
         content: "";
         z-index: 2;
+    }
+    .timeline-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 40px;
+    }
+    .education-item:nth-child(even) .timeline-content i {
+        padding-right: 0;
+        order: 1;
+    }
+    .education-item:nth-child(odd) .timeline-content i {
+        padding-left: 0;
     }
 
     .education-items::before, .timeline-dot{
@@ -736,6 +765,7 @@ footer{
     }
     #header-content{
         gap: 0;
+        margin-top: 15%;
     }
     #header-left h1{
         font-size: 1.7em;

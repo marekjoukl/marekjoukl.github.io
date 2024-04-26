@@ -1,7 +1,6 @@
 // Smooth scroll script
 let navlinks = document.querySelectorAll("#sidemenu li:not(:last-child) a");
 for (const link of navlinks) {
-  console.log(link);
   link.addEventListener("click", smoothScroll);
 }
 
