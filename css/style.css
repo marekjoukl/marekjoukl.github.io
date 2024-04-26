@@ -119,12 +119,14 @@ nav ul li a.active {
 
 #header-content img {
     max-width: 35%;
-    height: 35%;
+    width: 35%;
+    height: auto; /* Adjust this value as needed */
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
 }
+
 
 #header-content ul {
     display: block;
@@ -566,13 +568,15 @@ footer{
 @media screen and (max-width: 768px) {
     #header-content img{
         max-width: 55%;
-        height: 55%;
+        width: 50%;
+        max-height: 55%;
+
     }
     #header-content{
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 40px;
         gap: 0;
     }
     #header-left{
@@ -654,11 +658,12 @@ footer{
     }
 
     .icons-slide img {
-        height: 80px;
+        height: 60px;
         margin: 0 20px;
+        padding: 10px;
     }
     .icons{
-        padding: 30px 0;
+        padding: 20px 0;
     }
     .icons:before,
     .icons:after {
@@ -710,6 +715,12 @@ footer{
     .section-header{
         width: 170px;
         font-size: 20px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    #nav.fixed {
+        background-color: rgba(8, 8, 8, 1);
     }
 }
 

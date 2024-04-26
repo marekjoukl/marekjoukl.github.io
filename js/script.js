@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Smooth scroll script
-let navlinks = document.querySelectorAll("#nav a");
+let navlinks = document.querySelectorAll("#sidemenu a:not(:last-child)");
 for (const link of navlinks) {
   link.addEventListener("click", smoothScroll);
 }
@@ -35,14 +35,21 @@ function smoothScroll(event) {
   event.preventDefault();
 
   const href = this.getAttribute("href");
-  const targetElement = document.querySelector(href);
 
-  if (targetElement) {
-    const yOffset = -80;
-    const y =
-      targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  // Check if the href attribute starts with '#'
+  if (href.startsWith("#")) {
+    const targetElement = document.querySelector(href);
 
-    window.scrollTo({ top: y, behavior: "smooth" });
+    if (targetElement) {
+      const yOffset = -80;
+      const y =
+        targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  } else {
+    // Handle external URL navigation
+    window.location.href = href;
   }
 }
 
@@ -65,10 +72,11 @@ function getCurrentSection() {
 
 function updateActiveLink() {
   const currentSection = getCurrentSection();
-  const navLinks = document.querySelectorAll("#nav a");
+  const navLinks = document.querySelectorAll("#nav a[href^='#']");
 
   navLinks.forEach((link) => {
     const href = link.getAttribute("href").substring(1);
+
     if (currentSection && currentSection.id === href) {
       link.classList.add("active");
     } else {
@@ -76,10 +84,14 @@ function updateActiveLink() {
     }
   });
 }
+
 window.addEventListener("scroll", updateActiveLink);
 
 // Initial update on page load
-updateActiveLink();
+document.addEventListener("DOMContentLoaded", function () {
+  // Call updateActiveLink() once the DOM is fully loaded
+  updateActiveLink();
+});
 
 // Sidebar script
 function openmenu() {
