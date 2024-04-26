@@ -592,6 +592,7 @@ footer{
     }
     nav {
         padding: 10px 0;
+        transition: 0.3s ease;
     }
     nav ul li:last-child{
         display: block;
@@ -772,6 +773,7 @@ footer{
     }
     nav {
         padding: 10px 0;
+        transition: 0.3s ease;
     }
     nav ul li:last-child{
         display: block;
