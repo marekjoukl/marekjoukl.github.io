@@ -578,7 +578,8 @@ footer{
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        padding-top: 50px;
+        margin-top: 35%;
+        padding-bottom: 40px;
         gap: 50px;
     }
     #header-left{
