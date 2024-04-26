@@ -6,7 +6,7 @@ function handleScroll() {
   if (prevScrollPos > currentScrollPos) {
     navbar.style.top = "0";
   } else {
-    navbar.style.top = "-60px"; // Adjust this value to hide the navbar completely
+    navbar.style.top = "-70px"; // Adjust this value to hide the navbar completely
   }
   prevScrollPos = currentScrollPos;
 }
