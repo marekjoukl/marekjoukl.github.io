@@ -1,3 +1,29 @@
+:root{
+    --primary-color: #0F103F;
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(75%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-75%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,13 +32,52 @@
 }
 
 body{
-    background-color: #080808;
+    background-color: var(--primary-color);
     color: #fff;
+    overscroll-behavior: none;
+    margin: 0 auto;
+    min-width: 320px;
+    position: relative;
 }
 
 section{
     padding: 80px 0;
     border-bottom: #fff 2px solid;
+}
+
+/* Sparkles */
+
+.sparkle-1 {
+    position: fixed;
+    z-index: -10;
+    width: 600px;
+    height: 200px;
+    top: 150px;
+    left: 250px;
+    opacity: 0.5;
+    filter: blur(80px);
+    background: radial-gradient(circle, #980dddcc, #dc00dc00);
+}
+
+.sparkle-2 {
+    position: fixed;
+    z-index: -10;
+    width: 800px;
+    height: 500px;
+    top: 200px;
+    opacity: 0.6;
+    left: 975px;
+    filter: blur(50px);
+    background: radial-gradient(circle, #590186cc, #dc009600);
+}
+
+.slide-left{
+    animation: slideLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+.slide-right{
+    animation: slideRight 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
 }
 
 /****************************** HEADER ******************************/
@@ -21,7 +86,6 @@ header{
     width: 100%;
     padding: 0 10%;
 }
-
 
 /*--------------------------- NAVBAR ---------------------------*/
 
@@ -33,6 +97,7 @@ nav > a{
 }
 
 nav {
+    max-width: 1600px;
     top:0;
     display: flex;
     align-items: center;
@@ -40,14 +105,16 @@ nav {
     flex-wrap: wrap;
     border-bottom: #fff 1px solid;
     padding: 20px 0;
+    
 }
 #nav.fixed {
+    top:0;
+    width: 80%;
     position: fixed;
     background-color: #080808;
     z-index: 3;
-    width: 80%;
-    background-color: rgba(8, 8, 8, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(8, 8, 8, 0);
+    backdrop-filter: blur(20px);
 }
 nav ul li:last-child{
     display: none;
@@ -64,6 +131,7 @@ nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 20px;
+    
 }
 nav ul li a:after{
     content: '';
@@ -120,13 +188,13 @@ nav ul li a.active {
 #header-content img {
     max-width: 35%;
     width: 35%;
-    height: auto; /* Adjust this value as needed */
+    height: auto;
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    border: 8px #ffffff solid;
 }
-
 
 #header-content ul {
     display: block;
@@ -160,6 +228,7 @@ nav ul li a.active {
 .break-after {
     display: block;
 }
+
 #header-left h1{
     line-height: 1.5;
     padding: 30px 0 ;
@@ -343,12 +412,12 @@ main{
 
 .icons:before {
 left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--primary-color));
 }
 
 .icons:after {
     right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(30, 26, 78));
 }
 
 .icons:hover .icons-slide {
@@ -469,6 +538,7 @@ animation: 25s slide infinite linear;
 #contact > .row {
     text-align:left;
     padding-top: 50px;
+    flex-wrap: nowrap;
 }
 .contact-left{
     flex-basis: 50%;
@@ -531,6 +601,12 @@ animation: 25s slide infinite linear;
 }
 
 .contact-right form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.contact-right form{
     width: 100%;
 }
 form input, form textarea{
@@ -546,6 +622,7 @@ form input, form textarea{
 }
 .btn {
     background: linear-gradient(to right, #9824c9, #ba23c5); /* Linear gradient */
+    width: 200px;
     color: #fff;
     margin-top: 10px;
     padding: 15px 50px;
@@ -553,6 +630,7 @@ form input, form textarea{
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    align-self: center;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background color and box shadow */
 }
 
@@ -563,7 +641,6 @@ form input, form textarea{
 footer{
     width: 100%;
     padding: 20px 10%;
-    background-color: #080808;
     color: #fff;
     text-align: center;
 }
@@ -621,6 +698,10 @@ footer{
         align-self: flex-start;
         padding: 10px;
     }
+    #sidemenu.active{
+        right: -5%;
+    }
+
     #sidemenu {
         display: flex;
         flex-direction: column;
@@ -636,6 +717,7 @@ footer{
         transition: 0.5s ease;
         text-transform: uppercase;
     }
+
 
     #about .row {
         display: flex;
@@ -769,7 +851,7 @@ footer{
         padding: 50px 0;
     }
     #nav.fixed {
-        background-color: rgba(8, 8, 8, 1);
+        background-color: rgba(8, 8, 8, 0);
         width: 90%;
     }
 }
@@ -809,21 +891,26 @@ footer{
         align-self: flex-start;
         padding: 10px;  
     }
+
     #sidemenu {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         position: fixed;
         top: 0;
-        right: -240px;
+        right: -350px;
         background-color: #080808;
-        width: 220px;
+        width: 250px;
         height: 120vh;
         padding-top: 50px;
         z-index: 2;
         transition: 0.5s ease;
         text-transform: uppercase;
     }
+    #sidemenu.active{
+        right: -12%;
+    }
+
     #header-left h1 {
         font-size: 1.2em;
     }
@@ -886,6 +973,7 @@ footer{
     .contact-right form:first-child input{
         margin-top: 0;
     }
+
 }
 
 /* For devices between 1025px and 1200px (e.g., small laptops) */
@@ -936,7 +1024,6 @@ footer{
         width: 170px;
         font-size: 20px;
     }
-
 }
 
 /* For devices above 1200px (e.g., desktops) */

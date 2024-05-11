@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (prevScrollPos > currentScrollPos) {
       navbar.style.top = "0";
     } else {
-      if (sidemenu.style.right != "0px") navbar.style.top = "-70px";
+      if (!sidemenu.classList.contains("active")) navbar.style.top = "-70px";
     }
     prevScrollPos = currentScrollPos;
   }

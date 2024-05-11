@@ -19,4 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", fixedNav);
 
   setNavTop(); // Calculate navTop after page load
+  document
+    .querySelector("#header-content img")
+    .classList.add("animation-slide");
 });
